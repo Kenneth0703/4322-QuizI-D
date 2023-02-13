@@ -12,9 +12,27 @@ import csv
 
 #open the file
 
+infile = open("employee_data.csv", "r")
+outfile = open
 
+title = "CSR"
+dep = "Marketing"
 
-
+bonus = {}
+read = csv.reader(infile)
+for row in read:
+    if row[4] == title:
+        if row[3] == dep:
+            # print(f"Employee name: {row[1]}{row[2]}  Current Salary {row[5]}")
+            salary = row [5]
+            newsal = (float(salary) * 1.1)
+            name = (row[1],row[2])
+            # print(f"Employee name: {row[1]}{row[2]}  Current Salary {newsal}")
+            # bonus = {"manager name":row[1],"last name":row[2],"Salary":row[5]}
+            bonus = {"Manager name": {name} ,"Current Salary":{salary}}
+            print(bonus)
+            bonus["Current Salary"] = round(newsal,3)
+            print(bonus)
 #create an empty dictionary
 
 
